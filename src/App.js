@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 let imgBaseURL = 'https://image.tmdb.org/t/p/w500';
 let placeholderURL = 'https://via.placeholder.com/150';
@@ -41,6 +43,7 @@ class Fetch extends React.Component{
       <h1>{this.state.title}</h1>
       <p>{this.state.overview}</p>
       <img src={this.state.image}></img>
+      <Button variant="contained" color="primary">Material UI</Button>
       </>
     )
   }
