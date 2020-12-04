@@ -1,63 +1,125 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import MovieRow from './MovieRow.js'
+import $ from 'jquery'
 
-let imgBaseURL = 'https://image.tmdb.org/t/p/w500';
-let placeholderURL = 'https://via.placeholder.com/150';
+class App extends Component {
 
-function generateRandomID(){
-  let a = Math.floor(Math.random()*600)+1;
-  return a;
-}
+  constructor(props) {
+    super(props)
+    this.state = {}
+     console.log("This is my initializer")
 
-let randomID = generateRandomID();
+    // const movies = [
+    //   {id: 0, poster_src: "https://image.tmdb.org/t/p/w185/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    //    title: "Avengers: Infinity War", overview: "As the Avengers and their allies have continued to protect the world from threats too large"},
+    //   {id: 1, poster_src: "https://image.tmdb.org/t/p/w185/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
+    //    title: "	The Avengers", overview: "This is my second overview"},
+    // ]
 
-class Fetch extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      title: '',
-      overview: '',
-      image: ''
-    }
+    // var movieRows = []
+    // movies.forEach((movie) => {
+    //   console.log(movie.title)
+    //   const movieRow = <MovieRow movie={movie} />
+    //   movieRows.push(movieRow)
+    // })
+
+    // this.state = {rows: movieRows}
+
+    this.performSearch("ant man")
   }
 
-  componentDidMount(){
-   console.log('https://api.themoviedb.org/3/movie/'+randomID+'?api_key=ef3b7e9dfef3057a8dba1691a414348c');
-   const urlFetch = fetch('https://api.themoviedb.org/3/movie/'+randomID+'?api_key=ef3b7e9dfef3057a8dba1691a414348c')
-   urlFetch.then( res => {
-      if(res.status === 200)
-         return res.json()
-   }).then( resJson => {
-      console.log(resJson);
-      console.log(typeof(resJson));
-      console.log(resJson.original_title);
-      this.setState({title: resJson.original_title,overview: resJson.overview,image: (resJson.backdrop_path==null?placeholderURL:imgBaseURL+resJson.backdrop_path)})
-   })
+  performSearch(searchTerm) {
+    console.log("Perform search using moviedb")
+    const urlString = "https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm
+    $.ajax({
+      url: urlString,
+      success: (searchResults) => {
+        console.log("Fetched data successfully")
+        // console.log(searchResults)
+        const results = searchResults.results
+        // console.log(results[0])
+
+        var movieRows = []
+
+        results.forEach((movie) => {
+          movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path
+          // console.log(movie.poster_path)
+          const movieRow = <MovieRow key={movie.id} movie={movie}/>
+          movieRows.push(movieRow)
+        })
+
+        this.setState({rows: movieRows})
+      },
+      error: (xhr, status, err) => {
+        console.error("Failed to fetch data")
+      }
+    })
   }
-  render(){
+
+  searchChangeHandler(event) {
+    console.log(event.target.value)
+    const boundObject = this
+    const searchTerm = event.target.value
+    boundObject.performSearch(searchTerm)
+  }
+
+  render() {
     return (
-      <>
-      <h1>{this.state.title}</h1>
-      <p>{this.state.overview}</p>
-      <img src={this.state.image}></img>
-      <Button variant="contained" color="primary">Material UI</Button>
-      </>
-    )
+      <div>
+        
+        <table className="titleBar">
+          <tbody>
+            <tr>
+              <td width="8"/>
+              <td>
+                <h1>Boba Theater</h1>
+              </td>
+              <td>
+                <img alt="app icon" width="50" src="BOBS.png"/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table className="titleBar1">
+          <tbody>
+            <tr>
+              <td width="8"/>
+              <td>
+                <h1 class="home">Home</h1>
+              </td>
+              <td>
+                <h1 class="rating">Best Rating</h1>
+              </td>
+              <td>
+                <h1 class="rating">Genre</h1>
+              </td>
+              <td>
+                <h1 class="rating">Year</h1>
+              </td>
+              <td>
+                <h1 class="rating">Country</h1>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+
+        <input style={{
+          fontSize: 24,
+          display: 'block',
+          width: "99%",
+          paddingTop: 8,
+          paddingBottom: 8,
+          paddingLeft: 16
+        }} onChange={this.searchChangeHandler.bind(this)} placeholder="Enter search term"/>
+
+        {this.state.rows}
+
+      </div>
+    );
   }
-}
-
-function App() {
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Fetch />
-      </header>
-    </div>
-  );
 }
 
 export default App;
