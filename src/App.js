@@ -43,7 +43,10 @@ class App extends Component {
         var movieRows = []
 
         results.forEach((movie) => {
+          if(movie.poster_path!=null){
           movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path
+          }
+          else movie.poster_src = "https://via.placeholder.com/120x180?text=No+Picture+Found";
           // console.log(movie.poster_path)
           const movieRow = <MovieRow key={movie.id} movie={movie}/>
           movieRows.push(movieRow)
@@ -67,7 +70,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        
+
         <table className="titleBar">
           <tbody>
             <tr>
@@ -103,8 +106,8 @@ class App extends Component {
             </tr>
           </tbody>
         </table>
-        
-        
+
+
 
         <input style={{
           fontSize: 24,
