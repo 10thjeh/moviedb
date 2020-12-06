@@ -1,51 +1,111 @@
-.titleBar {
-  background-color: #000;
-  display: block;
-  color: #fff;
-  padding-left: 16px
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
 }
 
-.titleBar1 {
-  background-color: rgba(124, 75, 20, 0.904);
-  display: block;
-  color: rgb(0, 0, 0);
+.home,
+.GENRE,
+.BEST,
+.YEAR,
+.SEARCH,
+.DRAMA,
+.ROMANCE,
+.HOROR,
+.ANIME {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
 }
 
 .home {
-  margin-left :20px;
-  font-size:20px;
+  background-image: url('./images/img-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.rating {
-  margin-left :20px;
-  font-size:20px;
+.pic{
+  width: auto;
+  height: 100%;
+
 }
 
-.App {
-  text-align: center;
+.GENRE {
+  background-image: url('./images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.BEST {
+  background-image: url('./images/img-3.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.YEAR {
+  background-image: url('./images/img-4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.SEARCH {
+  background-image: url('./images/img-5.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-intro {
-  font-size: large;
+.HOROR{
+  background-image: url('./images/img-6.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.DRAMA {
+  background-image: url('./images/img-7.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
+
+.ROMANCE {
+  background-image: url('./images/img-8.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.ANIME {
+  background-image: url('./images/img-9.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+
+}
+
