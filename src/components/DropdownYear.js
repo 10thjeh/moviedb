@@ -9,10 +9,10 @@ function DropdownYear() {
   const handleClick = () => setClick(!click);
 
   return (
-    <>
+
       <ul
         onClick={handleClick}
-        className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
+        className={click ? 'dropdown-year clicked' : 'dropdown-year'}
       >
         {MenuItemsYear.map((item, index) => {
           return (
@@ -28,7 +28,6 @@ function DropdownYear() {
           );
         })}
       </ul>
-    </>
   );
 }
 

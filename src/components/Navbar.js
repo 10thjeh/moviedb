@@ -7,29 +7,46 @@ import DropdownYear from './DropdownYear';
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdownmenu, setDropdownMenu] = useState(false);
+  const [dropdownyear, setDropdownYear] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const onMouseEnter = () => {
+  const onMouseEnterMenu = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDropdownMenu(false);
     } else {
-      setDropdown(true);
+      setDropdownMenu(true);
     }
   };
 
-  const onMouseLeave = () => {
+  const onMouseLeaveMenu = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDropdownMenu(false);
     } else {
-      setDropdown(false);
+      setDropdownMenu(false);
+    }
+  };
+
+  const onMouseEnterYear = () => {
+    if (window.innerWidth < 960) {
+      setDropdownYear(false);
+    } else {
+      setDropdownYear(true);
+    }
+  };
+
+  const onMouseLeaveYear = () => {
+    if (window.innerWidth < 960) {
+      setDropdownYear(false);
+    } else {
+      setDropdownYear(false);
     }
   };
 
   return (
-    <>
+
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
          BOBA THEATER
@@ -45,8 +62,8 @@ function Navbar() {
           </li>
           <li
             className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseEnter={onMouseEnterMenu}
+            onMouseLeave={onMouseLeaveMenu}
           >
             <Link
               to='/GENRE'
@@ -55,7 +72,7 @@ function Navbar() {
             >
               GENRE <i className='fas fa-caret-down' />
             </Link>
-            {dropdown && <DropdownGenre />}
+            {dropdownmenu && <DropdownGenre />}
           </li>
           <li className='nav-item'>
             <Link
@@ -71,10 +88,12 @@ function Navbar() {
               to='/YEAR'
               className='nav-links'
               onClick={closeMobileMenu}
+              onMouseEnter={onMouseEnterYear}
+              onMouseLeave={onMouseLeaveYear}
             >
               YEAR <i className='fas fa-caret-down' />
             </Link>
-            {dropdown && <DropdownYear/>}
+            {dropdownyear && <DropdownYear/>}
           </li>
           <li>
             <Link
@@ -88,7 +107,7 @@ function Navbar() {
         </ul>
         <Button />
       </nav>
-    </>
+
   );
 }
 
