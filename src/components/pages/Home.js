@@ -7,7 +7,6 @@ import Row from './Row';
 export default function Home() {
   return (
     <div className='app'>
-      <h1 className='home'>WELCOME TO BOBA THEATER</h1>
       <Banner />
 
 			<Row
@@ -27,5 +26,3 @@ export default function Home() {
 }
 
 //export default Home;
-
-
