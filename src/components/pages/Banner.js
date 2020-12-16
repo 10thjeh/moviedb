@@ -28,7 +28,7 @@ function Banner() {
 	}
 
 	function handleClick(){
-		window.open("https://www.themoviedb.org/tv/"+movie.id);
+		window.open(onClickURL+movie.id);
 	}
 
 	return (

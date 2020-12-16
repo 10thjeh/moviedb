@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from './axios';
 import './Row.css';
-import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import Button from '@material-ui/core/Button';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
+const onClickURL = 'https://www.themoviedb.org/tv/';
+
+const API_KEY = '1b5adf76a72a13bad99b8fc0c68cb085';
 
 const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	const [movies, setMovies] = useState([]);
@@ -20,16 +23,10 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	}, [fetchUrl]);
 
 	const handleClick = (movie) => {
-		if (trailerUrl) {
-			setTrailerUrl('');
-		} else {
-			movieTrailer(movie?.name || '')
-				.then((url) => {
-					const urlParams = new URLSearchParams(new URL(url).search);
-					setTrailerUrl(urlParams.get('v'));
-				})
-				.catch((e) => console.log(e));
-		}
+		window.open(onClickURL+movie.id);
+		console.log(movie);
+		console.log(movie.title);
+		console.log(title);
 	};
 
 	const opts = {
@@ -56,14 +53,29 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 								src={`${base_url}${
 									isLargeRow ? movie.poster_path : movie.backdrop_path
 								}`}
-								alt={movie.name}
+								alt={movie.title}
 							/>
 						)
 				)}
 			</div>
-			{trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+			<Button variant="contained" color="secondary" disableElevation>More</Button>
+
 		</div>
 	);
 };
 
 export default Row;
+
+// old handleClick
+// const handleClick = (movie) => {
+// 	if (trailerUrl) {
+// 		setTrailerUrl('');
+// 	} else {
+// 		movieTrailer(movie?.name || '')
+// 			.then((url) => {
+// 				const urlParams = new URLSearchParams(new URL(url).search);
+// 				setTrailerUrl(urlParams.get('v'));
+// 			})
+// 			.catch((e) => console.log(e));
+// 	}
+// };
