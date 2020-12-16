@@ -3,9 +3,10 @@ import BannerGenre from './BannerGenre';
 import requests from './requests';
 import '../../App.css';
 
-export default function ANIME() {
+export default function Comedy() {
   return (
     <div className='app'>
-    <BannerGenre fetchUrl={requests.fetchAnimationMovies}/></div>
+    <BannerGenre fetchUrl={requests.fetchComedyMovies}/>
+    </div>
   );
 }

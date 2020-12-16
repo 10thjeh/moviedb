@@ -10,12 +10,22 @@ export const MenuItemsGenre = [
     cName: 'dropdown-link-menu'
   },
   {
+    title: 'COMEDY',
+    path: '/Comedy',
+    cName: 'dropdown-link-menu'
+  },
+  {
+    title: 'DOCUMENTARIES',
+    path: '/Documentaries',
+    cName: 'dropdown-link-menu'
+  },
+  {
     title: 'DRAMA',
     path: '/DRAMA',
     cName: 'dropdown-link-menu'
   },
   {
-    title: 'ANIME',
+    title: 'ANIMATION',
     path: '/ANIME',
     cName: 'dropdown-link-menu'
   }

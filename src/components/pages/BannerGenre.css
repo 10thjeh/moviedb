@@ -17,6 +17,13 @@
 	padding-bottom: 0.3rem;
 }
 
+.genre__title {
+	font-size: 3rem;
+	font-weight: 800;
+	padding-bottom: 0.3rem;
+	padding : 10px;
+}
+
 .banner__description {
 	width: 45rem;
 	line-height: 1.3;

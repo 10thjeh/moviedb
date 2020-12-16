@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from './axios';
-import './Banner.css';
-import requests from './requests';
+import './BannerGenre.css';
 
-function Banner() {
+function BannerGenre({title,fetchUrl}) {
 	const [movie, setMovie] = useState([]);
 
 	useEffect(() => {
 		async function fetchData() {
-			const request = await axios.get(requests.fetchNetflixOriginals);
-			setMovie(
-				request.data.results[
-					Math.floor(Math.random() * request.data.results.length - 1)
-				]
-			);
+			const request = await axios.get(fetchUrl);
+			setMovie(request.data.results[
+				Math.floor(Math.random() * request.data.results.length - 1)
+			]);
 			return request;
 		}
 		fetchData();
-	}, []);
+	}, [fetchUrl]);
 
 	console.log(movie);
 
@@ -35,7 +32,7 @@ function Banner() {
         )`,
 				backgroundPosition: 'center center'
 			}}
-		>
+		>	<h1 className='genre__title'>{title}</h1>
 			<div className='banner__contents'>
 				<h1 className='banner__title'>
 					{movie?.title || movie?.name || movie?.original_name}
@@ -51,4 +48,4 @@ function Banner() {
 	);
 }
 
-export default Banner;
+export default BannerGenre;
