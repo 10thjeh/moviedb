@@ -88,10 +88,8 @@ function Navbar() {
               to='/YEAR'
               className='nav-links'
               onClick={closeMobileMenu}
-              onMouseEnter={onMouseEnterYear}
-              onMouseLeave={onMouseLeaveYear}
             >
-              YEAR <i className='fas fa-caret-down' />
+              ABOUT US
             </Link>
             {dropdownyear && <DropdownYear/>}
           </li>

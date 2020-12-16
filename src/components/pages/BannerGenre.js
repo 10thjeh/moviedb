@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from './axios';
 import './BannerGenre.css';
 
+
 function BannerGenre({title,fetchUrl}) {
 	const [movie, setMovie] = useState([]);
 
@@ -32,7 +33,9 @@ function BannerGenre({title,fetchUrl}) {
         )`,
 				backgroundPosition: 'center center'
 			}}
-		>	<h1 className='genre__title'>{title}</h1>
+		>	
+
+		<h1 className='genre__title'>{title}</h1>
 			<div className='banner__contents'>
 				<h1 className='banner__title'>
 					{movie?.title || movie?.name || movie?.original_name}
@@ -44,6 +47,7 @@ function BannerGenre({title,fetchUrl}) {
 			</div>
 
 			<div className='banner--fadeBottom' />
+	
 		</header>
 	);
 }
