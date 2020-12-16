@@ -11,6 +11,8 @@ import ROMANCE from './components/pages/ROMANCE';
 import DRAMA from './components/pages/DRAMA';
 import ANIME from './components/pages/ANIME';
 import SEARCH from './components/pages/SEARCH';
+import Documentaries from './components/pages/Documentaries';
+import Comedy from './components/pages/Comedy';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path='/DRAMA' component={DRAMA}/>
         <Route path='/ANIME' component={ANIME}/>
         <Route path='/SEARCH' component={SEARCH}/>
+        <Route path='/Comedy' component={Comedy}/>
+        <Route path='/Documentaries' component={Documentaries}/>
       </Switch>
     </Router>
   );
