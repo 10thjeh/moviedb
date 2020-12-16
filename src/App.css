@@ -15,20 +15,20 @@
 .HOROR,
 .ANIME {
   display: flex;
-  height: 90vh;
+  height: 345px;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
-/* .home {
+ .home {
   background-image: url('./images/img-1.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: 75% 50%;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
-} */
+  font-size: 50px;
+} /*Sementara*/
 
 .app{
   background-color: black;
@@ -111,4 +111,28 @@
   color: #fff;
   font-size: 100px;
 
+}
+
+::-webkit-scrollbar{
+  width: 15px
+}
+
+::-webkit-scrollbar-track{
+  background: grey;
+}
+
+::-webkit-scrollbar-thumb{
+  background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: whitesmoke;
+}
+
+@media screen and (max-width: 960px){
+
+}
+
+.baba {
+  margin-top:75px;
 }

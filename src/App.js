@@ -13,6 +13,7 @@ import ANIME from './components/pages/ANIME';
 import SEARCH from './components/pages/SEARCH';
 import Documentaries from './components/pages/Documentaries';
 import Comedy from './components/pages/Comedy';
+import Content from './components/pages/Content';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/SEARCH' component={SEARCH}/>
         <Route path='/Comedy' component={Comedy}/>
         <Route path='/Documentaries' component={Documentaries}/>
+        <Route path='/Content' component={Content}/>
       </Switch>
     </Router>
   );

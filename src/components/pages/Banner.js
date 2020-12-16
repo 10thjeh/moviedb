@@ -3,6 +3,7 @@ import axios from './axios';
 import './Banner.css';
 import requests from './requests';
 
+
 function Banner() {
 	const [movie, setMovie] = useState([]);
 
@@ -24,7 +25,7 @@ function Banner() {
 	function truncate(str, n) {
 		return str?.length > n ? str.substr(0, n - 1) + '...' : str;
 	}
-
+	
 	return (
 		<header
 			className='banner'
@@ -36,6 +37,7 @@ function Banner() {
 				backgroundPosition: 'center center'
 			}}
 		>
+			
 			<div className='banner__contents'>
 				<h1 className='banner__title'>
 					{movie?.title || movie?.name || movie?.original_name}
