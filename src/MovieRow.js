@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
 
 class MovieRow extends React.Component {
   viewMovie() {
@@ -18,7 +19,7 @@ class MovieRow extends React.Component {
         <td>
           <h3>{this.props.movie.title}</h3>
           <p>{this.props.movie.overview}</p>
-          <input type="button" onClick={this.viewMovie.bind(this)} value="View"/>
+          <Button variant="contained" color="primary" onClick={this.viewMovie.bind(this)}>Visit</Button>
         </td>
       </tr>
     </tbody>

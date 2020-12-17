@@ -1,51 +1,135 @@
-.titleBar {
-  background-color: #000;
-  display: block;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.home,
+.GENRE,
+.BEST,
+.YEAR,
+.SEARCH,
+.DRAMA,
+.ROMANCE,
+.HOROR,
+.ANIME {
+  display: flex;
+  height: 345px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+ .home {
+  background-image: url('./images/img-1.jpg');
+  background-position: center;
+  background-size: 75% 50%;
+  background-repeat: no-repeat;
   color: #fff;
-  padding-left: 16px
+  font-size: 50px;
+} /*Sementara*/
+
+.app{
+  background-color: black;
 }
 
-.titleBar1 {
-  background-color: rgba(124, 75, 20, 0.904);
-  display: block;
-  color: rgb(0, 0, 0);
+.pic{
+  width: auto;
+  height: 100%;
+
 }
 
-.home {
-  margin-left :20px;
-  font-size:20px;
+.GENRE {
+  background-image: url('./images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.rating {
-  margin-left :20px;
-  font-size:20px;
+.BEST {
+  background-image: url('./images/img-3.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App {
-  text-align: center;
+.YEAR {
+  background-image: url('./images/img-4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.SEARCH {
+  background-image: url('./images/img-5.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.HOROR{
+  background-image: url('./images/img-6.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.DRAMA {
+  background-image: url('./images/img-7.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-.App-intro {
-  font-size: large;
+.ROMANCE {
+  background-image: url('./images/img-8.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.ANIME {
+  background-image: url('./images/img-9.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+
 }
+
+::-webkit-scrollbar{
+  width: 15px
+}
+
+::-webkit-scrollbar-track{
+  background: grey;
+}
+
+::-webkit-scrollbar-thumb{
+  background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: whitesmoke;
+}
+
+@media screen and (max-width: 960px){
+
+}
+
