@@ -4,7 +4,6 @@ import requests from './requests';
 import '../../App.css';
 import RowGenre from './RowGenre';
 import Row from './Row';
-import Carousel from "react-elastic-carousel";
 
 export default function Documentaries() {
   return (

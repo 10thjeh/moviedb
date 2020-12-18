@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import MovieRow from './MovieRow.js'
 import $ from 'jquery'
-import { pink } from '@material-ui/core/colors';
 
 class App extends Component {
 

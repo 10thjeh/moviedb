@@ -3,9 +3,7 @@ import BannerGenre from './BannerGenre';
 import requests from './requests';
 import '../../App.css';
 import RowGenre from './RowGenre';
-import Carousel from "react-elastic-carousel";
 import Row from './Row';
-import { Link } from 'react-router-dom';
 
 export default function Drama() {
   return (
@@ -20,4 +18,3 @@ export default function Drama() {
     </div>
   );
 }
-

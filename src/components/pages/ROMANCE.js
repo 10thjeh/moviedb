@@ -3,8 +3,6 @@ import '../../App.css';
 import requests from './requests';
 import BannerGenre from './BannerGenre';
 import RowGenre from './RowGenre';
-import Carousel from "react-elastic-carousel";
-import { Link } from 'react-router-dom';
 import Row from './Row';
 
 export default function ROMANCE() {
@@ -22,4 +20,3 @@ export default function ROMANCE() {
   </div>
   );
 }
-

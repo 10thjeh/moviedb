@@ -3,7 +3,6 @@ import '../../App.css';
 import requests from './requests';
 import Banner from './Banner';
 import Row from './Row';
-import {Bootstrap, Grid, Col} from 'react-bootstrap';
 
 export default function Home() {
 	return (
@@ -27,11 +26,11 @@ export default function Home() {
 			<Row title='Documentaries' fetchUrl={requests.fetchDocumentaries} isLargeRow />
 			<Row title='Drama' fetchUrl={requests.fetchDramaMovies} isLargeRow />
     		</div>
-	</div>	
+	</div>
 			  </>
   );
 
-  
+
 }
 
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import TVRow from './TVRow.js'
 import $ from 'jquery'
-import { pink } from '@material-ui/core/colors';
 
 class App extends Component {
 

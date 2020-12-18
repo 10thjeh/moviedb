@@ -4,12 +4,10 @@ import { ButtonTV } from './aButton';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import DropdownGenre from './DropdownGenre';
-import DropdownYear from './DropdownYear';
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdownmenu, setDropdownMenu] = useState(false);
-  const [dropdownyear, setDropdownYear] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -27,22 +25,6 @@ function Navbar() {
       setDropdownMenu(false);
     } else {
       setDropdownMenu(false);
-    }
-  };
-
-  const onMouseEnterYear = () => {
-    if (window.innerWidth < 960) {
-      setDropdownYear(false);
-    } else {
-      setDropdownYear(true);
-    }
-  };
-
-  const onMouseLeaveYear = () => {
-    if (window.innerWidth < 960) {
-      setDropdownYear(false);
-    } else {
-      setDropdownYear(false);
     }
   };
 
@@ -92,7 +74,6 @@ function Navbar() {
             >
               ABOUT US
             </Link>
-            {dropdownyear && <DropdownYear/>}
           </li>
           <li>
             <Link

@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from './axios';
-import requests from './requests';
 import './Row.css';
 import Carousel from "react-elastic-carousel";
 import { Link } from 'react-router-dom';
-//import YouTube from 'react-youtube';
-//import movieTrailer from 'movie-trailer';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
 const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	const [movies, setMovies] = useState([]);
-	const [trailerUrl, setTrailerUrl] = useState('');
 
 	useEffect(() => {
 		async function fetchData() {
@@ -34,24 +30,15 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 		localStorage.setItem('date',  movie.first_air_date?movie.first_air_date : movie.release_date);
 	};
 
-	const opts = {
-		height: '390',
-		width: '100%',
-		playerVars: {
-			// https://developers.google.com/youtube/player_parameters
-			autoplay: 1
-		}
-	};
-
 	return (
-		
+
 		<div className='row'>
 			<h2>{title}</h2>
 			<div className='row__posters'>
-				<Carousel itemsToShow={5} enableAutoPlay > 
+				<Carousel itemsToShow={5} enableAutoPlay >
 				{movies.map(
 					(movie) =>
-						
+
 						((isLargeRow && movie.poster_path) ||
 							(!isLargeRow && movie.backdrop_path)) && (
 							<Link
@@ -71,13 +58,13 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 							/>
 							</Link>
 						)
-						
+
 				)}
-				
-				</Carousel>	
-				
+
+				</Carousel>
+
 			</div>
-								
+
 		</div>
 	);
 };
