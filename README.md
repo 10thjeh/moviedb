@@ -1,6 +1,6 @@
 # Welcome to Boba Theater Repo
 
-Visit [here](ayotidur.surge.sh)
+Visit [here](http://ayotidur.surge.sh)
 
 ## Running in your localhost
 1. Clone the repo
