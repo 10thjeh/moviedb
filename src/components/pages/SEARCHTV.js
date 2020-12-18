@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './SEARCH';
 import TVRow from './TVRow.js'
 import $ from 'jquery'
 

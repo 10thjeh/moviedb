@@ -5,7 +5,7 @@ import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GENRE from './components/pages/GENRE';
 import BEST from './components/pages/BEST';
-import YEAR from './components/pages/YEAR';
+import AboutUs from './components/pages/AboutUs';
 import HOROR from './components/pages/HOROR';
 import ROMANCE from './components/pages/ROMANCE';
 import DRAMA from './components/pages/DRAMA';
@@ -24,7 +24,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/GENRE' component={GENRE} />
         <Route path='/BEST' component={BEST} />
-        <Route path='/YEAR' component={YEAR} />
+        <Route path='/AboutUs' component={AboutUs} />
         <Route path='/HOROR' component={HOROR} />
         <Route path='/ROMANCE' component={ROMANCE} />
         <Route path='/DRAMA' component={DRAMA}/>

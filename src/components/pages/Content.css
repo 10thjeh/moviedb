@@ -15,23 +15,21 @@ body{
 .gambar{
     max-width : 300px;
     float:left;
-    margin-left:100px;
     padding: 20px;
 }
 
-.isi3{
+.isi5{
     color:white;
-    max-width : 600px;
-    padding : 30px;
-    margin-right: 250px;
-    float : right;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .judul{
     color : red;
     padding : 20px;
     text-align : center;
-    font-size : 100px;
+    font-size : 30px;
+    text-decoration: none;
 }
 
 .rating{

@@ -8,7 +8,7 @@ import Carousel from "react-elastic-carousel";
 export default function BEST() {
   return (
     <div className='app'>
-      <h1 className='home'>BEST RATING</h1>
+      <h1 className='home'></h1>
       <BannerGenre fetchUrl={requests.fetchTopRated}/>
       <div className="asal">
     <Carousel>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from './axios';
 import './Banner.css';
 import requests from './requests';
-
+import { Link } from 'react-router-dom';
 
 function Banner() {
 	const [movie, setMovie] = useState([]);
@@ -20,6 +20,18 @@ function Banner() {
 		fetchData();
 	}, []);
 
+	const handleClick = (movie) => {
+		console.log(movie?.title || movie?.name || movie?.original_name);
+		localStorage.setItem('movieid',movie.id);
+		localStorage.setItem('movieName',movie.name? movie.name : movie.title);
+		localStorage.setItem('backdrop',movie.backdrop_path);
+		localStorage.setItem('poster',movie.poster_path);
+		localStorage.setItem('overview',movie.overview);
+		localStorage.setItem('genre', movie.genre_ids);
+		localStorage.setItem('rating', movie.vote_average);
+		localStorage.setItem('date',  movie.first_air_date?movie.first_air_date : movie.release_date);
+	};
+	
 	console.log(movie);
 
 	function truncate(str, n) {
@@ -28,7 +40,7 @@ function Banner() {
 	
 	return (
 		<header
-			className='banner'
+			className='GambarUtama'
 			style={{
 				backgroundSize: 'cover',
 				backgroundImage: `url(
@@ -38,17 +50,19 @@ function Banner() {
 			}}
 		>
 			
-			<div className='banner__contents'>
-				<h1 className='banner__title'>
+			<div className='IsiGambar' onMouseDown={() => handleClick(movie)}>
+			<Link to = "/Content" style={{textDecoration: "none"}}>
+				<h1 className='Judul'>
 					{movie?.title || movie?.name || movie?.original_name}
 				</h1>
+				</Link>
 				<br></br>
-				<h1 className='banner__description'>
-					{truncate(movie?.overview, 150)}
+				<h1 className='Deskripsi'>
+					{truncate(movie?.overview, 100)}
 				</h1>
 			</div>
-
-			<div className='banner--fadeBottom' />
+			
+			<div className='Bayangan' />
 		</header>
 	);
 }

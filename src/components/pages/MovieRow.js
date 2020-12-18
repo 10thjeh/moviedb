@@ -24,6 +24,10 @@ class MovieRow extends React.Component {
 		localStorage.setItem('date', this.props.movie.first_air_date?this.props.movie.first_air_date : this.props.movie.release_date);
 	};
 	
+	truncate(str, n) {
+		return str?.length > n ? str.substr(0, n - 1) + '...' : str;
+	}
+	
   render() {
     return <table key={this.props.movie.id}>
     <div className="isi">
@@ -35,7 +39,7 @@ class MovieRow extends React.Component {
         <td>
           <div className="isi2">
           <h3>{this.props.movie.title}</h3>
-          <p>{this.props.movie.overview}</p>
+          <p>{this.truncate(this.props.movie.overview, 50)}</p>
           <div className="tomboll">
 					<Button target="_blank"
 						variant="contained"

@@ -4,6 +4,7 @@ import requests from './requests';
 import Banner from './Banner';
 import Row from './Row';
 
+
 export default function Home() {
 	return (
 		<>
@@ -12,11 +13,7 @@ export default function Home() {
 		<h1 className='home'></h1>
       <Banner />
 			<div className='baba'>
-			<Row
-				title='CBS Network'
-				fetchUrl={requests.fetchCBSNetwork}
-				isLargeRow
-			/>
+			<Row title='CBS Network' fetchUrl={requests.fetchCBSNetwork} isLargeRow/>
 			<Row title='Trending Now' fetchUrl={requests.fetchTrending} isLargeRow/>
 			<Row title='Top Rated' fetchUrl={requests.fetchTopRated} isLargeRow/>
 			<Row title='Animation' fetchUrl={requests.fetchAnimationMovies}isLargeRow/>
@@ -26,11 +23,11 @@ export default function Home() {
 			<Row title='Documentaries' fetchUrl={requests.fetchDocumentaries} isLargeRow />
 			<Row title='Drama' fetchUrl={requests.fetchDramaMovies} isLargeRow />
     		</div>
-	</div>
+	</div>	
 			  </>
   );
 
-
+  
 }
 
 

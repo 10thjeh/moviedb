@@ -11,9 +11,9 @@
 	white-space: nowrap;
 }
 
-.row__posters::-webkit-scrollbar {
+/*.row__posters::-webkit-scrollbar {
 	display: none;
-}
+}*/
 
 .row__poster {
 	object-fit: contain;
