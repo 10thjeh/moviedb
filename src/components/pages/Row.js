@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from './axios';
+import requests from './requests';
 import './Row.css';
-import YouTube from 'react-youtube';
-import movieTrailer from 'movie-trailer';
+import Carousel from "react-elastic-carousel";
+import { Link } from 'react-router-dom';
+//import YouTube from 'react-youtube';
+//import movieTrailer from 'movie-trailer';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
@@ -20,16 +23,15 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	}, [fetchUrl]);
 
 	const handleClick = (movie) => {
-		if (trailerUrl) {
-			setTrailerUrl('');
-		} else {
-			movieTrailer(movie?.name || '')
-				.then((url) => {
-					const urlParams = new URLSearchParams(new URL(url).search);
-					setTrailerUrl(urlParams.get('v'));
-				})
-				.catch((e) => console.log(e));
-		}
+		console.log(movie?.title || movie?.name || movie?.original_name);
+		localStorage.setItem('movieid',movie.id);
+		localStorage.setItem('movieName',movie.name? movie.name : movie.title);
+		localStorage.setItem('backdrop',movie.backdrop_path);
+		localStorage.setItem('poster',movie.poster_path);
+		localStorage.setItem('overview',movie.overview);
+		localStorage.setItem('genre', movie.genre_ids);
+		localStorage.setItem('rating', movie.vote_average);
+		localStorage.setItem('date',  movie.first_air_date?movie.first_air_date : movie.release_date);
 	};
 
 	const opts = {
@@ -42,15 +44,24 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	};
 
 	return (
+		
 		<div className='row'>
 			<h2>{title}</h2>
 			<div className='row__posters'>
-				{movies.slice(0,5).map(
+				<Carousel itemsToShow={5} enableAutoPlay > 
+				{movies.map(
 					(movie) =>
+						
 						((isLargeRow && movie.poster_path) ||
 							(!isLargeRow && movie.backdrop_path)) && (
+							<Link
+								to={{
+									pathname: "/Content",
+									state: {movie}
+									}}
+							>
 							<img
-								onClick={() => handleClick(movie)}
+								onMouseDown={() => handleClick(movie)}
 								className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
 								key={movie.id}
 								src={`${base_url}${
@@ -58,12 +69,15 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 								}`}
 								alt={movie.name}
 							/>
-							
-							
+							</Link>
 						)
+						
 				)}
+				
+				</Carousel>	
+				
 			</div>
-			{trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+								
 		</div>
 	);
 };

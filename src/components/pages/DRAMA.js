@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default function Drama() {
   return (
     <div className='app'>
-      <h1 className='home'>Drama</h1>
+
     <BannerGenre fetchUrl={requests.fetchDramaMovies}/>
     <Row title='Drama' fetchUrl={requests.fetchDramaMovies} isLargeRow />
     <RowGenre title='Drama' start='0' end ='4' fetchUrl={requests.fetchDramaMovies} isLargeRow />

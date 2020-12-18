@@ -34,3 +34,25 @@
 .row__poster:hover {
 	transform: scale(1.08);
 }
+
+.rec.rec-arrow:disabled {
+	visibility: hidden;
+}
+
+.rec.rec-arrow{
+	color:white;
+	background-color: rgba(109, 35, 35, 0.856);
+}
+
+.rec.rec-arrow:hover{
+	background-color: pink;
+}
+
+button.rec-dot{
+	background-color: red;
+	box-shadow: 0 0 1px 3px darkred;
+  }
+  
+button.rec-dot:hover{
+	box-shadow: 0 0 1px 3px pink;
+}

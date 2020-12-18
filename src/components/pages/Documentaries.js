@@ -9,7 +9,6 @@ import Carousel from "react-elastic-carousel";
 export default function Documentaries() {
   return (
     <div className='app'>
-      <h1 className='home'>Documentaries</h1>
     <BannerGenre fetchUrl={requests.fetchDocumentaries}/>
     <Row title='Documentaries' fetchUrl={requests.fetchDocumentaries} isLargeRow />
     <RowGenre title='Documentaries' start='0' end ='4' fetchUrl={requests.fetchDocumentaries} isLargeRow />

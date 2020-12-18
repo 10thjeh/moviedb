@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default function ANIME() {
   return (
     <div className='app'>
-      <h1 className='home'>Animation</h1>
+
     <BannerGenre fetchUrl={requests.fetchAnimationMovies}/>
     <Row title='Animation' fetchUrl={requests.fetchAnimationMovies} isLargeRow/>
      <RowGenre title='Comedy' start='0' end ='4' fetchUrl={requests.fetchAnimationMovies} isLargeRow />

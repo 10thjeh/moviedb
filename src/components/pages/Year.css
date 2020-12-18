@@ -1,0 +1,72 @@
+.pinkcrew{
+    background-image: url('../../images/pink.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 300px;
+    height: 300px;
+}
+.amongus{
+    background-image: url('../../images/amongus.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    width: 100%;
+    text-align:center;
+    height: 200px;
+}
+.yellowcrew{
+    background-image: url('../../images/yellow.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 300px;
+    height: 300px;
+}
+.redcrew{
+    background-image: url('../../images/red.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 300px;
+    height: 300px;
+    transform: scaleX(-1);
+}
+.orangecrew{
+    background-image: url('../../images/orange.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 300px;
+    height: 300px;
+}
+
+.container1{
+    float:left;
+    margin-left: 20px;
+    color : white;
+    opacity: inherit;
+    margin-bottom: 20px;
+}
+
+.namaYellow{
+    color:yellow;
+    font-size : 20px;
+    margin-bottom: 5px;
+}
+.namaPink{
+    color:pink;
+    font-size : 20px;
+    margin-bottom: 5px;
+}
+
+.namaRed{
+    color:red;
+    font-size : 20px;
+    margin-bottom: 5px;
+}
+.namaOrange{
+    color:orange;
+    font-size : 20px;
+    margin-bottom: 5px;
+}

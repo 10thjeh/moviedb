@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
+import { ButtonTV } from './aButton';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import DropdownGenre from './DropdownGenre';
@@ -98,12 +99,22 @@ function Navbar() {
               to='/SEARCH'
               className='nav-links-mobile'
               onClick={closeMobileMenu}
-            >
-              SEARCH
+				  >
+					  Search Movie
             </Link>
-          </li>
+			  </li>
+        <li>
+            <Link
+              to='/SEARCHTV'
+              className='nav-links-mobile'
+              onClick={closeMobileMenu}
+            >
+              Search TV
+            </Link>
+			  </li>
         </ul>
-        <Button />
+		  <Button />
+		  <ButtonTV />
       </nav>
 
   );

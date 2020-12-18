@@ -21,16 +21,14 @@ const RowGenre = ({ title, fetchUrl, isLargeRow = false,start,end}) => {
 	}, [fetchUrl]);
 
 	const handleClick = (movie) => {
-		if (trailerUrl) {
-			setTrailerUrl('');
-		} else {
-			movieTrailer(movie?.name || '')
-				.then((url) => {
-					const urlParams = new URLSearchParams(new URL(url).search);
-					setTrailerUrl(urlParams.get('v'));
-				})
-				.catch((e) => console.log(e));
-		}
+		localStorage.setItem('movieid',movie.id);
+		localStorage.setItem('movieName',movie.name? movie.name : movie.title);
+		localStorage.setItem('backdrop',movie.backdrop_path);
+		localStorage.setItem('poster',movie.poster_path);
+		localStorage.setItem('overview',movie.overview);
+		localStorage.setItem('genre', movie.genre_ids);
+		localStorage.setItem('rating', movie.vote_average);
+		localStorage.setItem('date', movie.first_air_date?movie.first_air_date : movie.release_date);
 	};
 
 	const opts = {
@@ -53,7 +51,7 @@ const RowGenre = ({ title, fetchUrl, isLargeRow = false,start,end}) => {
 							(!isLargeRow && movie.backdrop_path)) && (
 								<Link to="/Content">
 							<img 
-								onClick={() => handleClick(movie)}
+								onMouseDown={() => handleClick(movie)}
 								className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
 								key={movie.id}
 								src={`${base_url}${

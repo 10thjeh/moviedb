@@ -11,6 +11,7 @@ import ROMANCE from './components/pages/ROMANCE';
 import DRAMA from './components/pages/DRAMA';
 import ANIME from './components/pages/ANIME';
 import SEARCH from './components/pages/SEARCH';
+import SEARCHTV from './components/pages/SEARCHTV';
 import Documentaries from './components/pages/Documentaries';
 import Comedy from './components/pages/Comedy';
 import Content from './components/pages/Content';
@@ -29,6 +30,7 @@ function App() {
         <Route path='/DRAMA' component={DRAMA}/>
         <Route path='/ANIME' component={ANIME}/>
         <Route path='/SEARCH' component={SEARCH}/>
+        <Route path='/SEARCHTV' component={SEARCHTV}/>
         <Route path='/Comedy' component={Comedy}/>
         <Route path='/Documentaries' component={Documentaries}/>
         <Route path='/Content' component={Content}/>

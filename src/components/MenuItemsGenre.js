@@ -1,6 +1,6 @@
 export const MenuItemsGenre = [
   {
-    title: 'HOROR',
+    title: 'HORROR',
     path: '/HOROR',
     cName: 'dropdown-link-menu'
   },

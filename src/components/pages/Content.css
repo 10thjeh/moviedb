@@ -1,0 +1,45 @@
+body{
+    background-color:black;
+}
+
+.poster{
+    max-width:100%;
+    max-height: auto;
+    object-fit: contain;
+    position: relative;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.gambar{
+    max-width : 300px;
+    float:left;
+    margin-left:100px;
+    padding: 20px;
+}
+
+.isi3{
+    color:white;
+    max-width : 600px;
+    padding : 30px;
+    margin-right: 250px;
+    float : right;
+}
+
+.judul{
+    color : red;
+    padding : 20px;
+    text-align : center;
+    font-size : 100px;
+}
+
+.rating{
+    color:yellow;
+    font-size:25px;
+}
+
+.release {
+    color:green;
+    font-size: 20px;
+}

@@ -21,23 +21,28 @@
   font-size: 2rem;
 }
 
- .home {
-  background-image: url('./images/img-1.jpg');
+ .home{
+  background-image: url('./images/Boba\ theateR.png');
   background-position: center;
-  background-size: 75% 50%;
+  background-size: cover;
+  background-color: #f2dfef;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 50px;
-} /*Sementara*/
+  font-size: 100px;
+} 
 
 .app{
-  background-color: black;
+  background-color: #734046;
 }
 
 .pic{
   width: auto;
   height: 100%;
 
+}
+
+.asal {
+  margin-top:100px;
 }
 
 .GENRE {
@@ -59,9 +64,9 @@
 }
 
 .YEAR {
-  background-image: url('./images/img-4.jpg');
+  background-image: url('./images/Fotobentar.png');
   background-position: center;
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
@@ -133,6 +138,3 @@
 
 }
 
-.baba {
-  margin-top:75px;
-}

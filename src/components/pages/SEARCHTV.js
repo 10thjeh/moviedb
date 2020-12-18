@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import MovieRow from './MovieRow.js'
+import TVRow from './TVRow.js'
 import $ from 'jquery'
 import { pink } from '@material-ui/core/colors';
 
@@ -15,7 +15,7 @@ class App extends Component {
 
   performSearch(searchTerm) {
     console.log("Perform search using moviedb")
-    const urlString = "https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm
+    const urlString = "https://api.themoviedb.org/3/search/tv?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm
     $.ajax({
       url: urlString,
       success: (searchResults) => {
@@ -29,7 +29,7 @@ class App extends Component {
         results.forEach((movie) => {
           movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path
           // console.log(movie.poster_path)
-          const movieRow = <MovieRow key={movie.id} movie={movie}/>
+          const movieRow = <TVRow key={movie.id} movie={movie}/>
           movieRows.push(movieRow)
         })
 
@@ -57,7 +57,7 @@ class App extends Component {
           paddingTop: 8,
           paddingBottom: 8,
           paddingLeft: 16
-        }} onChange={this.searchChangeHandler.bind(this)} placeholder="Search movie"/>
+        }} onChange={this.searchChangeHandler.bind(this)} placeholder="Search TV"/>
 
         {this.state.rows}
 

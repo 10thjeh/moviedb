@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default function Comedy() {
   return (
     <div className='app'>
-      <h1 className='home'>Comedy</h1>
+      
     <BannerGenre fetchUrl={requests.fetchComedyMovies}/>
     <Row title='Comedy' fetchUrl={requests.fetchComedyMovies} isLargeRow />
     <RowGenre title='Comedy' start='0' end ='4' fetchUrl={requests.fetchComedyMovies} isLargeRow />
